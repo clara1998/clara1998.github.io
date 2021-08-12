@@ -99,45 +99,45 @@
 <h3 id="5、到这一步就搭建好了，启动网站页面"><a href="#5、到这一步就搭建好了，启动网站页面" class="headerlink" title="5、到这一步就搭建好了，启动网站页面"></a>5、到这一步就搭建好了，启动网站页面</h3><p>输入命令 hexo server，弹出网站页面如下</p>
 <p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811111255034.png" alt="image-20210811111255034"></p>
 <h3 id="6-新建一篇文章"><a href="#6-新建一篇文章" class="headerlink" title="6.新建一篇文章"></a>6.新建一篇文章</h3><p>ctrl+c再输Y断开批处理操作</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811112114842.png" alt="image-20210811112114842"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811112114842.png" alt="image-20210811112114842"></p>
 <p>hexo n “我的第一篇博客文章”</p>
 <p>输入命令hexo g 生成</p>
 <p>再次启动得到：</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811142050628.png" alt="image-20210811142050628"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811142050628.png" alt="image-20210811142050628"></p>
 <h3 id="7、部署到远端【搞了好半天】"><a href="#7、部署到远端【搞了好半天】" class="headerlink" title="7、部署到远端【搞了好半天】"></a>7、部署到远端【搞了好半天】</h3><p><strong>准备工作</strong>：首先，在github上部署，新建一个仓库，再安装git部署插件输入命令：npm install –save hexo-deployer-git；</p>
 <p>再设置myWeb文件夹下的_config.yml文件，windows系统直接用notepad++打开，在最下边添加deploy信息【每个冒号后边要加空格！！】</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811143700885.png" alt="image-20210811143700885"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811143700885.png" alt="image-20210811143700885"></p>
 <p>下一步，先打开git Bash，输入如下命令（给git配置身份）：</p>
 <p><code>git config --global user.name &quot;xxx&quot;    其中xxx为github的用户名</code></p>
 <p><code>git config --global user.email &quot;xxx&quot;    其中xxx为github的登录邮箱</code></p>
 <p>接下来回到git CMD中，输入：</p>
 <p><code>hexo d</code></p>
 <p>这里的弹出一个选项：</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811152156923.png" alt="image-20210811152156923"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811152156923.png" alt="image-20210811152156923"></p>
 <p>我选择1，然后弹出一个网页，是git请求绑定github的请求，允许之后回到cmd窗口等待片刻后弹出如下信息后即部署成功！</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811152306138.png" alt="image-20210811152306138"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811152306138.png" alt="image-20210811152306138"></p>
 <p>此时刷新github的仓库，发现已经部署好了！（开心！！！）</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811152351721.png" alt="image-20210811152351721"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811152351721.png" alt="image-20210811152351721"></p>
 <p>现在只要在浏览器直接输入仓库名就可以访问啦！</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811152705619.png" alt="image-20210811152705619"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811152705619.png" alt="image-20210811152705619"></p>
 <h3 id="8、自定义更换主题"><a href="#8、自定义更换主题" class="headerlink" title="8、自定义更换主题"></a>8、自定义更换主题</h3><p><a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a>  github上一位大佬做的主题，名字为yilia</p>
 <p>以该主题为例，命令行输入</p>
 <p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
 <p>等待一会儿克隆完成，此时themes文件夹中有了yilia这个文件夹</p>
 <p>再次修改config.yml文件，将theme改为yilia</p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811153535723.png" alt="image-20210811153535723"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811153535723.png" alt="image-20210811153535723"></p>
 <p>然后清理一下，重新生成，最后打开，输入如下命令：</p>
 <p><code>hexo clean</code></p>
 <p><code>hexo g</code></p>
 <p><code>hexo server</code></p>
 <p><strong>注意：这个时候还没有推到远端，还是要用localhost：4000来访问网站</strong></p>
-<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/.%5C%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%5Cimage-20210811153912641.png" alt="image-20210811153912641"></p>
+<p><img src="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/image-20210811153912641.png" alt="image-20210811153912641"></p>
 <p>然后再输入<code>hexo d</code>推到远端，就可以用仓库名直接访问了，主题更换完成~</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" data-id="cks8my0b00002mktl2h9lhfn0" data-title="个人博客搭建过程" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" data-id="cks8nfv740002z0tlb37ceygd" data-title="个人博客搭建过程" class="article-share-link">Share</a>
       
       
       
@@ -176,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/photo/" data-id="cks8my0ax0001mktl51yvaz2j" data-title="photo" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/photo/" data-id="cks8nfv720001z0tl98zv5cmy" data-title="photo" class="article-share-link">Share</a>
       
       
       
@@ -205,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/" data-id="cks8my0b60004mktldu86hrqy" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/" data-id="cks8nfv780004z0tl40r4e5x8" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -246,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="cks8my0b40003mktlewjc6pxj" data-title="我的第一篇博客" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="cks8nfv760003z0tl8m6ubg8c" data-title="我的第一篇博客" class="article-share-link">Share</a>
       
       
       
@@ -297,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/hello-world/" data-id="cks8my0an0000mktl4pbh6ioq" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/hello-world/" data-id="cks8nfv6o0000z0tldfa4ej6b" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
