@@ -71,6 +71,529 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HTTP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/16/HTTP/" class="article-date">
+  <time class="dt-published" datetime="2021-08-16T15:02:08.470Z" itemprop="datePublished">2021-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="HTTP（Hyper-Text-Transfer-Protocol，超文本传输协议）"><a href="#HTTP（Hyper-Text-Transfer-Protocol，超文本传输协议）" class="headerlink" title="HTTP（Hyper Text Transfer Protocol，超文本传输协议）"></a>HTTP（Hyper Text Transfer Protocol，超文本传输协议）</h1><h3 id="1、万维网（www）"><a href="#1、万维网（www）" class="headerlink" title="1、万维网（www）"></a>1、万维网（www）</h3><ul>
+<li>一个大规模的、练计时的信息储藏所/资料空间，是无数个网络站点和网页的集合</li>
+<li>统一资源定位符URL   ——–&gt; 资源（文字、视频、音频）</li>
+<li>URL一般形式：</li>
+<li>&lt;协议&gt;：//&lt;主机&gt;：&lt;端口&gt;/&lt;路径&gt;</li>
+<li><ul>
+<li>协议：http、ftp</li>
+<li>主机：域名、IP地址</li>
+</ul>
+</li>
+<li>用户通过点击超链接获取资源，这些资源通过HTTP传送给使用者</li>
+<li>WWW以客户服务器方式工作，用户使用的浏览器就是万维网客户程序，万维网文档所主流的主机运行服务器程序</li>
+<li>万维网使用超文本标记语言HTML</li>
+</ul>
+<h3 id="2、一些概念"><a href="#2、一些概念" class="headerlink" title="2、一些概念"></a>2、一些概念</h3><ol>
+<li><p>DNS</p>
+<p>DNS：Domain Name System 域名解析系统</p>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>  www三级域名，baidu二级域名</p>
+</li>
+</ol>
+<h3 id="3、HTTP"><a href="#3、HTTP" class="headerlink" title="3、HTTP"></a>3、HTTP</h3><p>HTTP协议定义了浏览器（万维网客户进程）怎样向万维网服务器请求万维网文档，以及服务器怎样把文档传送给浏览器。</p>
+<p><strong>用户浏览页面具体过程：</strong></p>
+<ol>
+<li>浏览器分析URL</li>
+<li>浏览器向DNS请求解析IP地址</li>
+<li>DNS解析出IP地址</li>
+<li>浏览器与服务器建立TCP连接</li>
+<li>浏览器发出去文件命令</li>
+<li>服务器响应</li>
+<li>释放TCP连接</li>
+<li>浏览器显示</li>
+</ol>
+<p><img src="/2021/08/16/HTTP/image-20210809160257028.png" alt="image-20210809160257028"></p>
+<ul>
+<li><p>HTTP协议的特点</p>
+<ul>
+<li><p>HTTP协议是无状态的，没记忆，每次点都相同，但实际上一些网站希望能够识别用户，由此诞生了Cookie。</p>
+<p>Cookie是存储在用户主机中的文本文件，记录一段时间某个用户（使用识别码识别）的访问记录，提供个性化服务。</p>
+</li>
+<li><p>HTTP采用TCP作为运输层协议，但是HTTP协议本身是无连接的（交换请求之前不需要建立连接）</p>
+<p>HTTP连接方式：持久连接：非流水线</p>
+<p>​                                                流水线</p>
+<p>​                            非持久连接</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>HTTP状态码：</p>
+<p><strong>1xx：表示通知信息的，如请求收到了或者正在处理</strong></p>
+<p><strong>2xx：标识成功，如接受或者知道了</strong></p>
+<ul>
+<li><p><strong>200请求已成功，返回想要的东西。</strong>出现此状态码是表示正常状态。（所有人都喜欢的）</p>
+</li>
+<li><p>201 请求成功，服务器正在创建请求的资源</p>
+</li>
+<li><p>202 服务器收到请求了，但是未处理</p>
+</li>
+<li><p>203 服务器成功处理，但是返回的信息是另一个来源</p>
+</li>
+<li><p>204 服务器成功处理，但是没有返回内容 ，在未更新网页的情况下，可确保浏览器继续显示当前文档</p>
+</li>
+<li><p>205 服务器成功处理，但是没有返回内容，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</p>
+</li>
+<li><p>206 成功处理了部分get请求</p>
+</li>
+</ul>
+<p><strong>3xx：表示重定向，如要完成请求还必须采取进一步的行动</strong></p>
+<ul>
+<li><p>300 针对请求，服务器可执行多种操作</p>
+</li>
+<li><p><strong>301 请求的网页已永久移动到新位置</strong>。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置</p>
+</li>
+<li><p>302 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求</p>
+</li>
+<li><p>304 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容</p>
+</li>
+<li><p>305 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理</p>
+</li>
+</ul>
+<p><strong>4xx：表示客户的差错，如请求中有错误的语法或不能完成</strong></p>
+<ul>
+<li><p>400 语义错误，请求无法被服务器理解。或者请求参数有误</p>
+</li>
+<li><p>401 请求需要请求者验证</p>
+</li>
+<li><p><strong>403 服务器拒绝该请求</strong></p>
+</li>
+<li><p><strong>404 找不到请求网页</strong></p>
+</li>
+<li><p>405 请求的方法是服务器中禁用的</p>
+</li>
+<li><p>406 请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体</p>
+</li>
+<li><p>408 请求超时</p>
+</li>
+<li><p>410 被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址 </p>
+</li>
+<li><p>413 服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围</p>
+</li>
+</ul>
+<p><strong>5xx：表示服务器的差错，如服务器失效无法完成请求</strong></p>
+<ul>
+<li><p><strong>500 服务器代码报错</strong></p>
+</li>
+<li><p>501 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码</p>
+</li>
+<li><p><strong>502 服务器作为网关或代理，从上游服务器收到无效响应</strong></p>
+</li>
+<li><p>503  服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态</p>
+</li>
+<li><p>504 服务器作为网关或代理，但是没有及时从上游服务器收到请求</p>
+</li>
+<li><p>505 服务器不支持请求中所用的 HTTP 协议版本</p>
+</li>
+</ul>
+<h3 id="4、浏览器加载顺序、渲染过程"><a href="#4、浏览器加载顺序、渲染过程" class="headerlink" title="4、浏览器加载顺序、渲染过程"></a>4、浏览器加载顺序、渲染过程</h3><p>（1）IE下载的顺序是从上到下，渲染的顺序也是从上到下，下载和渲染是同时进行的。<br>（2）在渲染到页面的某一部分时，其上面的所有部分都已经下载完成（<strong>并不是说所有相关联的元素都已经下载完</strong>）<br>（3）如果遇到语义解释性的标签嵌入文件（JS脚本，CSS样式），那么此时IE的下载过程会启用单独连接进行下载。<br>（4）并且在下载后进行解析，解析过程中，停止页面所有往下元素的下载。<strong>阻塞加载</strong><br>（5）样式表在下载完成后，将和以前下载的所有样式表<strong>一起进行解析</strong>，解析完成后，将对此前所有元素（含以前已经渲染的）<strong>重新进行渲染</strong>。<br>（6）JS、CSS中如有重定义，后定义函数将覆盖前定义函数</p>
+<h3 id="5、HTTP请求类别"><a href="#5、HTTP请求类别" class="headerlink" title="5、HTTP请求类别"></a>5、HTTP请求类别</h3><p>http请求中的8种请求方法</p>
+<p>1、opions：返回服务器针对特定资源所支持的HTML请求方法，或web服务器发送“*”测试服务器功能（允许客户端查看服务器性能）</p>
+<p><strong>2、Get  ：向特定资源发出请求（请求指定页面信息，并返回实体主体）</strong></p>
+<p><strong>3、Post ：向指定资源提交数据进行处理请求（提交表单、上传文件），又可能导致新的资源的建立或原有资源的修改</strong></p>
+<p>4、Put：向指定资源位置上上传其最新内容（从客户端向服务器传送的数据取代指定文档的内容）</p>
+<p>5、Head：HEAD就像GET，只不过服务端接受到HEAD请求后只返回响应头，而不会发送响应内容。当我们只需要查看某个页面的状态的时候，使用HEAD是非常高效的，因为在传输的过程中省去了页面内容。</p>
+<p>6、Delete：请求服务器删除request-URL所标示的资源*（请求服务器删除页面）</p>
+<p>7、Trace：回显服务器收到的请求，主要用于测试和诊断</p>
+<p>8、Connect：HTTP/1.1协议中能够将连接改为管道方式的代理服务器</p>
+<h3 id="6、HTTP请求报文-名字-：-空格-值"><a href="#6、HTTP请求报文-名字-：-空格-值" class="headerlink" title="6、HTTP请求报文(名字+：+空格+值)"></a>6、HTTP请求报文(名字+：+空格+值)</h3><p><strong>一个完整的请求报文：</strong></p>
+<p>行        POST  /s?ie=utf-8 HTTP/1.1</p>
+<p>头        Host: baidu.com</p>
+<p>​            Cookie: name=baidu</p>
+<p>​            Content-type: application/x-www-form-urlencoded</p>
+<p>​            User-Agent: chrome 83</p>
+<p>空行</p>
+<p>体        username=admin&amp;password=admin</p>
+<p>如果是一个GET请求，体为空，如果是POST请求，请求体可以不为空</p>
+<p><strong>响应报文</strong></p>
+<p>行        HTTP/1.1 200 OK</p>
+<p>头        Content-Type: text/html;charset=utf-8</p>
+<p>​            Content-length: 2048</p>
+<p>​            Content-encoding: gzip</p>
+<p>空行</p>
+<p>体        </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">            哈哈哈</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/16/HTTP/" data-id="ckserzpmu0000qwtlakfk3nsh" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Node.js" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/16/Node.js/" class="article-date">
+  <time class="dt-published" datetime="2021-08-16T15:02:08.430Z" itemprop="datePublished">2021-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="1、命令行窗口（CMD窗口、终端、SHELL）"><a href="#1、命令行窗口（CMD窗口、终端、SHELL）" class="headerlink" title="1、命令行窗口（CMD窗口、终端、SHELL）"></a>1、命令行窗口（CMD窗口、终端、SHELL）</h4><ul>
+<li><p>常用指令：</p>
+<ul>
+<li>dir：理出当前，目录下的所有文件</li>
+<li>cd 目录名：进入到指定的目录</li>
+<li>md 目录名：新建一个文件夹</li>
+<li>rd 目录名：删除一个文件夹</li>
+<li>直接输文件名： 打开这个文件</li>
+<li>换别的盘就直接 D：</li>
+</ul>
+</li>
+<li><p>目录：</p>
+<ul>
+<li>. 表示当前目录</li>
+<li>.. 表示上一级目录（../style.css,当前文件实际上是省略了./）</li>
+<li></li>
+</ul>
+</li>
+<li><p>环境变量（windows系统中的变量）</p>
+<p>一般在环境变量中修改</p>
+<ul>
+<li><p>path：把某个文件的路径加入path后<strong>重启命令行窗口</strong>,就可以在任何位置打开文件了</p>
+</li>
+<li><p>当我们在命令行窗口打开一个文件，或者调用一个程序时，系统会首先在当前目录下寻找文件程序，如果找带了直接打开，如果没找到则会依次到环境变量path的路径中寻找，直到找到为止。如果没找到，则报错</p>
+</li>
+<li><p>类似于作用域链</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">200</span>;<span class="comment">//在没有，找到全局变量a=100</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">300</span>; <span class="comment">//要是没有这一句，继续往外找，找到a=200；</span></span><br><span class="line">        <span class="built_in">console</span>.log(a);<span class="comment">//先找自己，找到了a=300</span></span><br><span class="line">    &#125;</span><br><span class="line">    fn2();</span><br><span class="line">&#125;</span><br><span class="line">fn(); </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>所以可以将一些经常需要访问的程序和文件的路径添加到paht中，这样我们就可以在任意位置来访问了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2、进程和线程"><a href="#2、进程和线程" class="headerlink" title="2、进程和线程"></a>2、进程和线程</h4><ul>
+<li><p>进程</p>
+<ul>
+<li>进程负责为程序的 运行提供必备的环境</li>
+<li>进程就相当于工厂中的车间（看CPU，占用为0的说明没有在工作）</li>
+</ul>
+</li>
+<li><p>线程</p>
+<ul>
+<li>线程是计算机中的最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程相当于工厂中的工人</li>
+</ul>
+</li>
+<li><p>单线程（一个活一个人干）</p>
+<ul>
+<li>js是<strong>单线程</strong>。在执行js代码时，网页的渲染是停止的，执行完渲染</li>
+</ul>
+</li>
+<li><p>多线程（一个活多个人干）</p>
+<ul>
+<li>假设一个线程加载页面，一个渲染页面，加载到一半js代码里改样式，就会矛盾</li>
+</ul>
+</li>
+</ul>
+<h4 id="3、node-js简介"><a href="#3、node-js简介" class="headerlink" title="3、node.js简介"></a>3、node.js简介</h4><p>node.js是一个能在<strong>服务器端</strong>运行js的js运行环境。（之前都是在浏览器端运行，node.js可以直接在系统中运行，平台不仅限于浏览器了，可以像java等语言一样直接和系统来交互）</p>
+<p><strong>把js的战场从前端拉到服务器</strong></p>
+<ul>
+<li>I/O：对磁盘的读写操作</li>
+</ul>
+<p>Node</p>
+<ul>
+<li>node师弟ES标准的一个实现，也是一个js引擎</li>
+<li>通过node可以使js代码在服务器端执行</li>
+<li>node仅仅对ES标准进行了实现，所以在node中不包含ＤＯＭ和ＢＯＭ</li>
+<li>node中可以使用所有的内联对象<ul>
+<li>String Number Boolean Math Data RegExp Function Object Array</li>
+<li>而DOM和BOM都不能使用，但是可以使用console也可以使用定时器（setTimeout（） setInterval（））</li>
+</ul>
+</li>
+<li>node可以再后台来编写服务器<ul>
+<li>node编写服务器都是单线程的服务器</li>
+<li>进程<ul>
+<li>进程负责为程序的 运行提供必备的环境</li>
+<li>进程就相当于工厂中的车间（看CPU，占用为0的说明没有在工作）</li>
+</ul>
+</li>
+<li>线程<ul>
+<li>线程是计算机中的最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程相当于工厂中的工人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>传统的服务器都是多线程的<ul>
+<li>每进来一个请求，就创建一个线程去处理请求</li>
+</ul>
+</li>
+<li>node的服务器是单线程的<ul>
+<li>node处理请求时是单线程，但是在后台拥有一个I/O线程池</li>
+</ul>
+</li>
+<li>分布式：一个服务器不够，再加一个</li>
+</ul>
+<h4 id="4、包"><a href="#4、包" class="headerlink" title="4、包"></a>4、包</h4><h5 id="1-包的结构"><a href="#1-包的结构" class="headerlink" title="1.包的结构"></a>1.包的结构</h5><p>包就是一个压缩文件，解压以后还原为目录</p>
+<ul>
+<li><p>package.json  描述文件【必须！】</p>
+</li>
+<li><p>bin 可执行二进制文件</p>
+</li>
+<li><p>lib js代码</p>
+</li>
+<li><p>doc 文档</p>
+</li>
+<li><p>test 单元测试</p>
+</li>
+</ul>
+<p>包描述文件勇于表达非代码相关的信息，位于包的根目录下</p>
+<h4 id="5、NPM（Node-Package-Manager）"><a href="#5、NPM（Node-Package-Manager）" class="headerlink" title="5、NPM（Node Package Manager）"></a>5、NPM（Node Package Manager）</h4><p>npm -v 查看版本</p>
+<p>npm version 看所有模块版本</p>
+<p>npm search 包名 查找包（需要联网）</p>
+<p>npm install 包名 在当前目录安装包   或者npm i 包名</p>
+<p>npm install 包名 -g 全局模式安装包（全局安装的包一般都是一些工具，在计算机利用，不是在项目里用）</p>
+<p>npm remove / r 包名 删除包</p>
+<p>npm install 包名 –save  安装包并添加到依赖中【常用！】</p>
+<p>npm install 下载当前项目所依赖的包</p>
+<h4 id="6、cnpm"><a href="#6、cnpm" class="headerlink" title="6、cnpm"></a>6、cnpm</h4><p>镜像服务器，在中国搭建一个服务器，把美国的全部下载到中国，以后直接连接中国的</p>
+<h4 id="7、Buffer"><a href="#7、Buffer" class="headerlink" title="7、Buffer"></a>7、Buffer</h4><p>啊这，看代码注释吧！</p>
+<h4 id="8、fs模块"><a href="#8、fs模块" class="headerlink" title="8、fs模块"></a>8、fs模块</h4><p>同步和异步调用：</p>
+<ul>
+<li>fs模块中所有操作都有两种形式：同步和异步</li>
+<li>同步文件系统会阻塞程序的进行，即除非操作完毕，否则不会向下执行代码</li>
+<li>一部文件系统不会阻塞程序的进行，而是在操作完成时，通过回调函数将结果返回</li>
+</ul>
+<h5 id="同步文件写入："><a href="#同步文件写入：" class="headerlink" title="同步文件写入："></a>同步文件写入：</h5><p>文件系统（File System）<br>    - 文件系统简单来说就是通过node来操作系统中的文件<br>        - 使用文件系统，需要引入fs模块，fs是核心模块，直接引入不需要下载<br>        同步文件的写入<br>        - 手动操作的步骤<br>        1.打开文件<br>        fs.openSync(path,flags[,mode])<br>            - path 要打开文件的路径<br>            - flags 打开文件要做的操作类型<br>                r 只读的<br>                w 可写的<br>            - mode 设置文件的操作权限，一般不传<br>        返回值：<br>        - 该方法会返回一个文件的描述符作为结果，我们可以通过该描述符来对文件进行各种操作<br>          2.向文件中写入内容<br>            fs.writeSync(fd,string[,position[,encoding]])<br>                - fd 文件的描述符，传递我们要写入的文件的描述符<br>                      - string 要写入的内容<br>                      - position 写入起始位置<br>                            - encoding 写入的编码<br>                      3.保存并关闭文件<br>                fs.closeSync(fd)<br>                         - fd 要关闭的文件的描述符</p>
+<h5 id="异步文件写入："><a href="#异步文件写入：" class="headerlink" title="异步文件写入："></a>异步文件写入：</h5><pre><code>fs.open(path,flags[,mode],callback);
+
+- 用来打开一个文件
+    - 异步调用的方法，结果都是通过回调函数的参数返回的
+    - 回调函数两个参数：
+        err 错误对象，如果没有错误则为null
+        fd 文件的描述符
+    fs.write(fd,string[,position[,encoding]],callback)
+    - 用来异步写入一个文件
+    fs.close(fd,callback)
+    - 用来关闭文件
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/16/Node.js/" data-id="ckserzpn50001qwtlddsyf59f" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-jQuery" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/16/jQuery/" class="article-date">
+  <time class="dt-published" datetime="2021-08-16T15:02:08.410Z" itemprop="datePublished">2021-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><p><strong>概念</strong>：也叫js库：就是一个js文件，存放了很多js的函数。jQuery把js中的Dom操作做了封装，可以快速查询使用里面的功能。</p>
+<p>jQuery封装了js常会用的功能代码，优化了DOM、时间除了、动画设计、AJAX</p>
+<p>原生js相当于楼梯，jQuery相当于电梯</p>
+<p>优点：</p>
+<ul>
+<li>轻量级，文件才几十kb</li>
+<li>跨浏览器兼容</li>
+<li>链式编程、隐式迭代</li>
+<li>对事件、动画支持，大大简化了DOM操作</li>
+<li>支持插件扩展开发</li>
+<li>免费、开源</li>
+</ul>
+<h4 id="jquery的顶级对象"><a href="#jquery的顶级对象" class="headerlink" title="jquery的顶级对象$"></a>jquery的顶级对象$</h4><p>相当于原生js中的window，可以用jQuery把元素用$包装成jQuery对象</p>
+<h4 id="jQuery和DOM对象"><a href="#jQuery和DOM对象" class="headerlink" title="jQuery和DOM对象"></a>jQuery和DOM对象</h4><ol>
+<li>用原生js获取的对象就是DOM对象</li>
+<li>用jQuery获取的对象就是jQuery对象</li>
+<li>jQuery本质是利用$对DOM对象包装后产生的对象(伪数组形式存储)。</li>
+<li>两者可以相互转换。原生js比jquery更大，有些方法在jQuery里没有，要把$转换为DOM对象才能使用<ul>
+<li>dom转换为$ : $(DOM对象)</li>
+<li>jQuery转换为DOM对象 index表示索引号，表示当前这个标签的顺序，从0开始<ul>
+<li><code>$(&#39;div&#39;)[index] </code></li>
+<li><code>$(&#39;div&#39;).get(index) </code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="一、jQuery选择器"><a href="#一、jQuery选择器" class="headerlink" title="一、jQuery选择器"></a>一、jQuery选择器</h3><h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><ol>
+<li>id选择器 $(“#id”)</li>
+<li>全选选择器$(‘*’)  单引号！</li>
+<li>类选择器  $(“.class”)</li>
+<li>标签选择器 $(“div”)</li>
+<li>并集选择器$(“div,p.li”)</li>
+<li>交集选择器$(“li.current”)</li>
+<li>子代选择器 $(“ul &gt; li”) 选中一代儿子，不选孙子</li>
+<li>后代选择器 $(“ul li”)  选中ul下的所有li元素，包括孙子等</li>
+</ol>
+<h4 id="隐式迭代"><a href="#隐式迭代" class="headerlink" title="隐式迭代"></a>隐式迭代</h4><p>遍历内部DOM元素（伪数组形式存储）的过程就叫隐式迭代：给匹配到的所有元素进行循环遍历，不用我们再进行循环，方便调用</p>
+<h4 id="筛选选择器"><a href="#筛选选择器" class="headerlink" title="筛选选择器"></a>筛选选择器</h4><p>:first 获取第一个 :last 获取最后一个 【单引号】</p>
+<p>:eq(index) 获取索引为index的</p>
+<p>:odd 获取索引号为奇数的 :even ……偶数的</p>
+<h4 id="筛选方法"><a href="#筛选方法" class="headerlink" title="筛选方法"></a>筛选方法</h4><p>.parent() 找亲爸爸</p>
+<p>children(selector) 找儿子</p>
+<p>find（）找某一类型 什么都不写就是全找出来</p>
+<p>siblings(selector) 找出所有兄弟 不包括自己</p>
+<p>eq() </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用选择器的方式选择</span></span><br><span class="line">$(<span class="string">&quot;ul li:eq(2)&quot;</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;blue&quot;</span>);</span><br><span class="line"><span class="comment">//利用选择方法的方式选择  更推荐这种写法</span></span><br><span class="line">$(<span class="string">&quot;u li&quot;</span>).eq(<span class="number">2</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;blue&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>hasClass()检查当前元素是否有某个类</p>
+<h4 id="jQuery的排他思想"><a href="#jQuery的排他思想" class="headerlink" title="jQuery的排他思想"></a>jQuery的排他思想</h4><p>当前元素有样式，其他元素清除样式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    	<span class="comment">//点击按钮时</span></span><br><span class="line">        $(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//当前元素改变颜色</span></span><br><span class="line">            $(<span class="built_in">this</span>).css(<span class="string">&quot;background&quot;</span>,<span class="string">&quot;pink&quot;</span>);</span><br><span class="line">            <span class="comment">//其他兄弟设置为空</span></span><br><span class="line">            $(<span class="built_in">this</span>).siblings(<span class="string">&quot;button&quot;</span>).css(<span class="string">&quot;background&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">            <span class="comment">//链式编程 连在一起写，省略一个$(this)</span></span><br><span class="line">            <span class="comment">//我的颜色为粉色，我的兄弟的颜色为空</span></span><br><span class="line">            $(<span class="built_in">this</span>).css(<span class="string">&quot;background&quot;</span>,<span class="string">&quot;pink&quot;</span>).siblings(<span class="string">&quot;button&quot;</span>).css(<span class="string">&quot;background&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">            <span class="comment">//我的兄弟变颜色，我的颜色不变</span></span><br><span class="line">            $(<span class="built_in">this</span>).siblings(<span class="string">&quot;button&quot;</span>).css(<span class="string">&quot;background&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">            <span class="comment">//最后是给我的兄弟的爸爸body变颜色</span></span><br><span class="line">            $(<span class="built_in">this</span>).siblings().parent().css(<span class="string">&quot;background&quot;</span>,<span class="string">&quot;none&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>案例，淘宝精品服饰：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//1.鼠标经过左侧的小li、</span></span><br><span class="line">            $(<span class="string">&quot;#left li&quot;</span>).mouseover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//2.得到当前小li的索引号</span></span><br><span class="line">                <span class="keyword">var</span> index = $(<span class="built_in">this</span>).index();</span><br><span class="line">                <span class="built_in">console</span>.log(index);</span><br><span class="line">                <span class="comment">//3.让右侧盒子相应索引号</span></span><br><span class="line">                $(<span class="string">&quot;#content div&quot;</span>).eq(index).show();</span><br><span class="line">                <span class="comment">//4.让其余图片隐藏起来</span></span><br><span class="line">                $(<span class="string">&quot;#content div&quot;</span>).eq(index).siblings().hide();</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上述案例中的链式编程，一定要确定好到底对谁操作</p>
+<h3 id="二、jQuery样式操作"><a href="#二、jQuery样式操作" class="headerlink" title="二、jQuery样式操作"></a>二、jQuery样式操作</h3><h4 id="2-1-操作css方法（样式比较简单）"><a href="#2-1-操作css方法（样式比较简单）" class="headerlink" title="2.1 操作css方法（样式比较简单）"></a>2.1 操作css方法（样式比较简单）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.参数只写属性名，则返回属性值</span></span><br><span class="line">$(<span class="built_in">this</span>).css(<span class="string">&quot;color&quot;</span>)</span><br><span class="line"><span class="comment">//2.参数是属性名，属性值，逗号分隔，属性名必须加引号，属性值如果是数字可以不用跟单位和引号</span></span><br><span class="line">$(<span class="built_in">this</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;pink&quot;</span>);</span><br><span class="line"><span class="comment">//3.参数可以是对象形式，方便设置多组样式,属性可以不用加引号,属性值是数字可以不用加引号，不是数字一定要加引号</span></span><br><span class="line">$(<span class="built_in">this</span>).css(&#123;</span><br><span class="line">    <span class="attr">width</span>:<span class="number">200</span>,</span><br><span class="line">    <span class="attr">height</span>:<span class="number">400</span>,</span><br><span class="line">    <span class="attr">backgroundColor</span>:<span class="string">&quot;red&quot;</span></span><br><span class="line">    <span class="comment">//如果是复合属性，必须采取驼峰命名法</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2设置类样式方法"><a href="#2-2设置类样式方法" class="headerlink" title="2.2设置类样式方法"></a>2.2设置类样式方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">       $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="comment">//1.添加类</span></span><br><span class="line">           $(<span class="string">&quot;div&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               <span class="comment">//$(this).addClass(&quot;current&quot;);</span></span><br><span class="line">           &#125;)</span><br><span class="line">           <span class="comment">//2.删除类</span></span><br><span class="line">           $(<span class="string">&quot;div&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               $(<span class="built_in">this</span>).removeClass(<span class="string">&quot;current&quot;</span>);</span><br><span class="line">           &#125;)</span><br><span class="line">           <span class="comment">//3.切换类</span></span><br><span class="line">           $(<span class="string">&quot;div&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               $(<span class="built_in">this</span>).toggleClass(<span class="string">&quot;current&quot;</span>)</span><br><span class="line">           &#125;)</span><br><span class="line">    		<span class="comment">//里面的类名不要加.!</span></span><br><span class="line">       &#125;)</span><br><span class="line">   &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>淘宝详情页切换效果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;tab_list li&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//链式编程操作</span></span><br><span class="line">	$(<span class="built_in">this</span>).addClass(<span class="string">&quot;current&quot;</span>).siblings().removeClass(<span class="string">&quot;current&quot;</span>);</span><br><span class="line">	<span class="comment">//2.点击的同时，得到当前li的索引号</span></span><br><span class="line">	<span class="keyword">var</span> index = $(<span class="built_in">this</span>).index();</span><br><span class="line">	<span class="built_in">console</span>.log(index);</span><br><span class="line">	<span class="comment">//3.让下部里面相应索引号的item显示，其余的item隐藏</span></span><br><span class="line">	$(<span class="string">&quot;.tab_con .item&quot;</span>).eq(index).show().siblings().hide();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="类操作和className区别"><a href="#类操作和className区别" class="headerlink" title="类操作和className区别"></a>类操作和className区别</h4><p>原生js中className会覆盖原先元素中的类名</p>
+<p>jQuery相当于在原先的类名后面又加上一个类名，一个元素可有多个类名</p>
+<p>jQuery的removeClass也只是删除相应的</p>
+<h3 id="三、jQuery效果"><a href="#三、jQuery效果" class="headerlink" title="三、jQuery效果"></a>三、jQuery效果</h3><h4 id="3-1显示隐藏效果"><a href="#3-1显示隐藏效果" class="headerlink" title="3.1显示隐藏效果"></a>3.1显示隐藏效果</h4><p>1.显示语法规范</p>
+<p><code>show([speed,[easing],[fn]);   //中括号表示可以不带这个参数</code></p>
+<p>2.显示参数</p>
+<ul>
+<li>参数都可以省略，无动画直接显示</li>
+<li>speed：”slow”,”normal”,”fast”,或者表示动画市场的毫秒数值</li>
+<li>easing：用来指定切换效果 默认是swing，可用linear</li>
+<li>fn：回调函数，在动画完成时执行的函数，每个元素执行一次</li>
+</ul>
+<p>隐藏、切换与上述类似</p>
+<p>一般情况下都不加参数，直接显示隐藏就可以了</p>
+<h4 id="3-2滑动"><a href="#3-2滑动" class="headerlink" title="3.2滑动"></a>3.2滑动</h4><p>slideDown slideUp slideToggle</p>
+<h4 id="3-3-事件切换"><a href="#3-3-事件切换" class="headerlink" title="3.3 事件切换"></a>3.3 事件切换</h4><p><code>hover([over,]out)</code></p>
+<p>over：鼠标移到元素上要触发的函数</p>
+<p>out：鼠标移出元素要触发的函数</p>
+<h4 id="3-4动画队列及其停止排队方法"><a href="#3-4动画队列及其停止排队方法" class="headerlink" title="3.4动画队列及其停止排队方法"></a>3.4动画队列及其停止排队方法</h4><p>stop(),停止排队，结束上一次的动画</p>
+<h4 id="3-5淡入淡出效果"><a href="#3-5淡入淡出效果" class="headerlink" title="3.5淡入淡出效果"></a>3.5淡入淡出效果</h4><p>fadeIn() </p>
+<p>fadeOut() </p>
+<p>fadeToggle()</p>
+<h5 id="利用渐进的方式调整到指定的不透明度-fadeTo-speed-opacity-easing-fn"><a href="#利用渐进的方式调整到指定的不透明度-fadeTo-speed-opacity-easing-fn" class="headerlink" title="利用渐进的方式调整到指定的不透明度 fadeTo([[speed],opacity,[easing],[fn]])"></a>利用渐进的方式调整到指定的不透明度 fadeTo([[speed],opacity,[easing],[fn]])</h5><p>opacity 透明度必须写 0-1之间</p>
+<p>speed也必须写</p>
+<h4 id="3-6-自定义动画-animate"><a href="#3-6-自定义动画-animate" class="headerlink" title="3.6 自定义动画 animate"></a>3.6 自定义动画 animate</h4><p>animate（params，[speed],[easing],[fn]）</p>
+<p>params：想要修改的样式属性 一对象形式传递，必须写，属性名可以不用带引号，如果是复合属性则需要采取驼峰命名法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	$(<span class="string">&quot;div&quot;</span>).animate(&#123;</span><br><span class="line">		<span class="attr">left</span>:<span class="number">500</span>,</span><br><span class="line">		<span class="attr">top</span>:<span class="number">300</span>,</span><br><span class="line">		<span class="attr">opacity</span>:<span class="number">0.4</span></span><br><span class="line">		<span class="attr">width</span>:<span class="number">500</span></span><br><span class="line">		<span class="comment">//效果：div从左上往右下移动，变透明 但是css要设置position为absolute</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/16/jQuery/" data-id="ckserzpnh0003qwtlgx6e6cda" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-VUE学习笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2021-08-16T12:50:40.000Z" itemprop="datePublished">2021-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">VUE学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="一、vue基础"><a href="#一、vue基础" class="headerlink" title="一、vue基础"></a>一、vue基础</h4><h5 id="1、第一个vue程序"><a href="#1、第一个vue程序" class="headerlink" title="1、第一个vue程序"></a>1、第一个vue程序</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 插值表达式 把数据和页面的结构关联起来 --&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">            <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="javascript">                <span class="attr">message</span>:<span class="string">&quot;你好！&quot;</span></span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;)</span></span><br><span class="line"><span class="javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2、el实例挂载"><a href="#2、el实例挂载" class="headerlink" title="2、el实例挂载"></a>2、el实例挂载</h5><p><strong>el是用来设置vue实例挂载（管理）的元素</strong></p>
+<p><strong>vue实例的作用范围：</strong>el选项名重的元素及其内部的后代元素</p>
+<p><strong>是否可以使用其他选择器？</strong>可以，建议选择id选择器（默认唯一）</p>
+<p><strong>是否可以设置其他的dom元素？</strong>可以使用其他的双标签，不能使用html和body</p>
+<h5 id="3、data数据对象"><a href="#3、data数据对象" class="headerlink" title="3、data数据对象"></a>3、data数据对象</h5><p>Vue中用到的数据定义在data中，data中可以写复杂类型的数据，渲染复杂类型数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;school.name&#125;&#125; &#123;&#123;school.mobile&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;campus[0]&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;campus[1]&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">        </span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="javascript">                <span class="attr">message</span>:<span class="string">&quot;你好!&quot;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="attr">school</span>:&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="attr">name</span>:<span class="string">&quot;zym&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="attr">mobile</span>:<span class="string">&quot;15600001234&quot;</span></span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                <span class="attr">campus</span>:[<span class="string">&quot;北京&quot;</span>,<span class="string">&quot;上海&quot;</span>]</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;)</span></span><br><span class="line"><span class="javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="二、本地应用"><a href="#二、本地应用" class="headerlink" title="二、本地应用"></a>二、本地应用</h4><ol>
+<li><p>v-text</p>
+<p>作用：设置标签内容</p>
+<p>默认写法会替代全部内容，使用差值表达式（双大括号）替换指定内容</p>
+<p>内部支持写表达式，双引号里面要写成单引号</p>
+</li>
+<li><p>v-html</p>
+<p>v-html指令的作用是设置元素的innerTML</p>
+<p>内容中有html结构会被解析为标签</p>
+<p>v-text指令无论内容是什么，只会解析文本</p>
+<p>解析文本使用v-text，需要解析html结构使用v-html</p>
+</li>
+<li><p>v-on</p>
+<p>作用：为元素绑定事件</p>
+<p>事件名不需要写on</p>
+<p>指令可以简写为@</p>
+<p>按核定的方法定义在methods属性中</p>
+<p>方法内部通过this关键字可以访问在data中数据</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckserzpnf0002qwtldggz6po3" data-title="VUE学习笔记" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-个人博客搭建过程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" class="article-date">
@@ -137,7 +660,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" data-id="ckseay9ik00010ctl9c960j99" data-title="个人博客搭建过程" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" data-id="ckserzpnk0005qwtlf4yj8jl2" data-title="个人博客搭建过程" class="article-share-link">Share</a>
       
       
       
@@ -176,128 +699,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/photo/" data-id="ckseay9iu00020ctl6951gw1h" data-title="photo" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-测试博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/12/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2021-08-12T06:48:24.910Z" itemprop="datePublished">2021-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h1><p>内容</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/" data-id="ckseay9iy00040ctlh0zn9ce2" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-我的第一篇博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2021-08-12T06:14:54.000Z" itemprop="datePublished">2021-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>内容</p>
-<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><p>巴拉巴拉</p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>dkjsdhsj</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckseay9iw00030ctlcgdb0wk7" data-title="我的第一篇博客" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/12/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-08-12T06:11:20.140Z" itemprop="datePublished">2021-08-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/12/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/hello-world/" data-id="ckseay9i700000ctlatl3c9jv" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/12/photo/" data-id="ckserzpni0004qwtlh6h9e92m" data-title="photo" class="article-share-link">Share</a>
       
       
       
@@ -469,7 +871,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/10/AJAX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckseay9j000050ctlcknyaxu1" data-title="AJAX学习笔记" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/10/AJAX%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckserzpnl0006qwtlaqczddnh" data-title="AJAX学习笔记" class="article-share-link">Share</a>
       
       
       
@@ -512,23 +914,23 @@
       <ul>
         
           <li>
+            <a href="/2021/08/16/HTTP/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/Node.js/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/jQuery/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">VUE学习笔记</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">个人博客搭建过程</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/photo/">photo</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/hello-world/">Hello World</a>
           </li>
         
       </ul>

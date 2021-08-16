@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="HTTP（Hyper Text Transfer Protocol，超文本传输协议）1、万维网（www） 一个大规模的、练计时的信息储藏所&#x2F;资料空间，是无数个网络站点和网页的集合 统一资源定位符URL   ——–&gt; 资源（文字、视频、音频） URL一般形式： &lt;协议&gt;：&#x2F;&#x2F;&lt;主机&gt;：&lt;端口&gt;&#x2F;&lt;路径&gt;  协议：http、ftp 主机：域名、IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/08/16/HTTP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTTP（Hyper Text Transfer Protocol，超文本传输协议）1、万维网（www） 一个大规模的、练计时的信息储藏所&#x2F;资料空间，是无数个网络站点和网页的集合 统一资源定位符URL   ——–&gt; 资源（文字、视频、音频） URL一般形式： &lt;协议&gt;：&#x2F;&#x2F;&lt;主机&gt;：&lt;端口&gt;&#x2F;&lt;路径&gt;  协议：http、ftp 主机：域名、IP">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/08/16/HTTP/image-20210809160257028.png">
+<meta property="article:published_time" content="2021-08-16T15:02:08.470Z">
+<meta property="article:modified_time" content="2021-08-16T15:03:14.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/08/16/HTTP/image-20210809160257028.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-HTTP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/16/HTTP/" class="article-date">
+  <time class="dt-published" datetime="2021-08-16T15:02:08.470Z" itemprop="datePublished">2021-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="HTTP（Hyper-Text-Transfer-Protocol，超文本传输协议）"><a href="#HTTP（Hyper-Text-Transfer-Protocol，超文本传输协议）" class="headerlink" title="HTTP（Hyper Text Transfer Protocol，超文本传输协议）"></a>HTTP（Hyper Text Transfer Protocol，超文本传输协议）</h1><h3 id="1、万维网（www）"><a href="#1、万维网（www）" class="headerlink" title="1、万维网（www）"></a>1、万维网（www）</h3><ul>
+<li>一个大规模的、练计时的信息储藏所/资料空间，是无数个网络站点和网页的集合</li>
+<li>统一资源定位符URL   ——–&gt; 资源（文字、视频、音频）</li>
+<li>URL一般形式：</li>
+<li>&lt;协议&gt;：//&lt;主机&gt;：&lt;端口&gt;/&lt;路径&gt;</li>
+<li><ul>
+<li>协议：http、ftp</li>
+<li>主机：域名、IP地址</li>
+</ul>
+</li>
+<li>用户通过点击超链接获取资源，这些资源通过HTTP传送给使用者</li>
+<li>WWW以客户服务器方式工作，用户使用的浏览器就是万维网客户程序，万维网文档所主流的主机运行服务器程序</li>
+<li>万维网使用超文本标记语言HTML</li>
+</ul>
+<h3 id="2、一些概念"><a href="#2、一些概念" class="headerlink" title="2、一些概念"></a>2、一些概念</h3><ol>
+<li><p>DNS</p>
+<p>DNS：Domain Name System 域名解析系统</p>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a>  www三级域名，baidu二级域名</p>
+</li>
+</ol>
+<h3 id="3、HTTP"><a href="#3、HTTP" class="headerlink" title="3、HTTP"></a>3、HTTP</h3><p>HTTP协议定义了浏览器（万维网客户进程）怎样向万维网服务器请求万维网文档，以及服务器怎样把文档传送给浏览器。</p>
+<p><strong>用户浏览页面具体过程：</strong></p>
+<ol>
+<li>浏览器分析URL</li>
+<li>浏览器向DNS请求解析IP地址</li>
+<li>DNS解析出IP地址</li>
+<li>浏览器与服务器建立TCP连接</li>
+<li>浏览器发出去文件命令</li>
+<li>服务器响应</li>
+<li>释放TCP连接</li>
+<li>浏览器显示</li>
+</ol>
+<p><img src="/2021/08/16/HTTP/image-20210809160257028.png" alt="image-20210809160257028"></p>
+<ul>
+<li><p>HTTP协议的特点</p>
+<ul>
+<li><p>HTTP协议是无状态的，没记忆，每次点都相同，但实际上一些网站希望能够识别用户，由此诞生了Cookie。</p>
+<p>Cookie是存储在用户主机中的文本文件，记录一段时间某个用户（使用识别码识别）的访问记录，提供个性化服务。</p>
+</li>
+<li><p>HTTP采用TCP作为运输层协议，但是HTTP协议本身是无连接的（交换请求之前不需要建立连接）</p>
+<p>HTTP连接方式：持久连接：非流水线</p>
+<p>​                                                流水线</p>
+<p>​                            非持久连接</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>HTTP状态码：</p>
+<p><strong>1xx：表示通知信息的，如请求收到了或者正在处理</strong></p>
+<p><strong>2xx：标识成功，如接受或者知道了</strong></p>
+<ul>
+<li><p><strong>200请求已成功，返回想要的东西。</strong>出现此状态码是表示正常状态。（所有人都喜欢的）</p>
+</li>
+<li><p>201 请求成功，服务器正在创建请求的资源</p>
+</li>
+<li><p>202 服务器收到请求了，但是未处理</p>
+</li>
+<li><p>203 服务器成功处理，但是返回的信息是另一个来源</p>
+</li>
+<li><p>204 服务器成功处理，但是没有返回内容 ，在未更新网页的情况下，可确保浏览器继续显示当前文档</p>
+</li>
+<li><p>205 服务器成功处理，但是没有返回内容，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</p>
+</li>
+<li><p>206 成功处理了部分get请求</p>
+</li>
+</ul>
+<p><strong>3xx：表示重定向，如要完成请求还必须采取进一步的行动</strong></p>
+<ul>
+<li><p>300 针对请求，服务器可执行多种操作</p>
+</li>
+<li><p><strong>301 请求的网页已永久移动到新位置</strong>。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置</p>
+</li>
+<li><p>302 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求</p>
+</li>
+<li><p>304 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容</p>
+</li>
+<li><p>305 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理</p>
+</li>
+</ul>
+<p><strong>4xx：表示客户的差错，如请求中有错误的语法或不能完成</strong></p>
+<ul>
+<li><p>400 语义错误，请求无法被服务器理解。或者请求参数有误</p>
+</li>
+<li><p>401 请求需要请求者验证</p>
+</li>
+<li><p><strong>403 服务器拒绝该请求</strong></p>
+</li>
+<li><p><strong>404 找不到请求网页</strong></p>
+</li>
+<li><p>405 请求的方法是服务器中禁用的</p>
+</li>
+<li><p>406 请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体</p>
+</li>
+<li><p>408 请求超时</p>
+</li>
+<li><p>410 被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址 </p>
+</li>
+<li><p>413 服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围</p>
+</li>
+</ul>
+<p><strong>5xx：表示服务器的差错，如服务器失效无法完成请求</strong></p>
+<ul>
+<li><p><strong>500 服务器代码报错</strong></p>
+</li>
+<li><p>501 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码</p>
+</li>
+<li><p><strong>502 服务器作为网关或代理，从上游服务器收到无效响应</strong></p>
+</li>
+<li><p>503  服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态</p>
+</li>
+<li><p>504 服务器作为网关或代理，但是没有及时从上游服务器收到请求</p>
+</li>
+<li><p>505 服务器不支持请求中所用的 HTTP 协议版本</p>
+</li>
+</ul>
+<h3 id="4、浏览器加载顺序、渲染过程"><a href="#4、浏览器加载顺序、渲染过程" class="headerlink" title="4、浏览器加载顺序、渲染过程"></a>4、浏览器加载顺序、渲染过程</h3><p>（1）IE下载的顺序是从上到下，渲染的顺序也是从上到下，下载和渲染是同时进行的。<br>（2）在渲染到页面的某一部分时，其上面的所有部分都已经下载完成（<strong>并不是说所有相关联的元素都已经下载完</strong>）<br>（3）如果遇到语义解释性的标签嵌入文件（JS脚本，CSS样式），那么此时IE的下载过程会启用单独连接进行下载。<br>（4）并且在下载后进行解析，解析过程中，停止页面所有往下元素的下载。<strong>阻塞加载</strong><br>（5）样式表在下载完成后，将和以前下载的所有样式表<strong>一起进行解析</strong>，解析完成后，将对此前所有元素（含以前已经渲染的）<strong>重新进行渲染</strong>。<br>（6）JS、CSS中如有重定义，后定义函数将覆盖前定义函数</p>
+<h3 id="5、HTTP请求类别"><a href="#5、HTTP请求类别" class="headerlink" title="5、HTTP请求类别"></a>5、HTTP请求类别</h3><p>http请求中的8种请求方法</p>
+<p>1、opions：返回服务器针对特定资源所支持的HTML请求方法，或web服务器发送“*”测试服务器功能（允许客户端查看服务器性能）</p>
+<p><strong>2、Get  ：向特定资源发出请求（请求指定页面信息，并返回实体主体）</strong></p>
+<p><strong>3、Post ：向指定资源提交数据进行处理请求（提交表单、上传文件），又可能导致新的资源的建立或原有资源的修改</strong></p>
+<p>4、Put：向指定资源位置上上传其最新内容（从客户端向服务器传送的数据取代指定文档的内容）</p>
+<p>5、Head：HEAD就像GET，只不过服务端接受到HEAD请求后只返回响应头，而不会发送响应内容。当我们只需要查看某个页面的状态的时候，使用HEAD是非常高效的，因为在传输的过程中省去了页面内容。</p>
+<p>6、Delete：请求服务器删除request-URL所标示的资源*（请求服务器删除页面）</p>
+<p>7、Trace：回显服务器收到的请求，主要用于测试和诊断</p>
+<p>8、Connect：HTTP/1.1协议中能够将连接改为管道方式的代理服务器</p>
+<h3 id="6、HTTP请求报文-名字-：-空格-值"><a href="#6、HTTP请求报文-名字-：-空格-值" class="headerlink" title="6、HTTP请求报文(名字+：+空格+值)"></a>6、HTTP请求报文(名字+：+空格+值)</h3><p><strong>一个完整的请求报文：</strong></p>
+<p>行        POST  /s?ie=utf-8 HTTP/1.1</p>
+<p>头        Host: baidu.com</p>
+<p>​            Cookie: name=baidu</p>
+<p>​            Content-type: application/x-www-form-urlencoded</p>
+<p>​            User-Agent: chrome 83</p>
+<p>空行</p>
+<p>体        username=admin&amp;password=admin</p>
+<p>如果是一个GET请求，体为空，如果是POST请求，请求体可以不为空</p>
+<p><strong>响应报文</strong></p>
+<p>行        HTTP/1.1 200 OK</p>
+<p>头        Content-Type: text/html;charset=utf-8</p>
+<p>​            Content-length: 2048</p>
+<p>​            Content-encoding: gzip</p>
+<p>空行</p>
+<p>体        </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">            哈哈哈</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/16/HTTP/" data-id="ckserzpmu0000qwtlakfk3nsh" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/16/Node.js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/16/HTTP/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/Node.js/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/jQuery/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">VUE学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">个人博客搭建过程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1、命令行窗口（CMD窗口、终端、SHELL） 常用指令：  dir：理出当前，目录下的所有文件 cd 目录名：进入到指定的目录 md 目录名：新建一个文件夹 rd 目录名：删除一个文件夹 直接输文件名： 打开这个文件 换别的盘就直接 D：   目录：  . 表示当前目录 .. 表示上一级目录（..&#x2F;style.css,当前文件实际上是省略了.&#x2F;）    环境变量（windows系统中的变量） 一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/08/16/Node.js/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、命令行窗口（CMD窗口、终端、SHELL） 常用指令：  dir：理出当前，目录下的所有文件 cd 目录名：进入到指定的目录 md 目录名：新建一个文件夹 rd 目录名：删除一个文件夹 直接输文件名： 打开这个文件 换别的盘就直接 D：   目录：  . 表示当前目录 .. 表示上一级目录（..&#x2F;style.css,当前文件实际上是省略了.&#x2F;）    环境变量（windows系统中的变量） 一">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-16T15:02:08.430Z">
+<meta property="article:modified_time" content="2021-08-07T15:10:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Node.js" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/16/Node.js/" class="article-date">
+  <time class="dt-published" datetime="2021-08-16T15:02:08.430Z" itemprop="datePublished">2021-08-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="1、命令行窗口（CMD窗口、终端、SHELL）"><a href="#1、命令行窗口（CMD窗口、终端、SHELL）" class="headerlink" title="1、命令行窗口（CMD窗口、终端、SHELL）"></a>1、命令行窗口（CMD窗口、终端、SHELL）</h4><ul>
+<li><p>常用指令：</p>
+<ul>
+<li>dir：理出当前，目录下的所有文件</li>
+<li>cd 目录名：进入到指定的目录</li>
+<li>md 目录名：新建一个文件夹</li>
+<li>rd 目录名：删除一个文件夹</li>
+<li>直接输文件名： 打开这个文件</li>
+<li>换别的盘就直接 D：</li>
+</ul>
+</li>
+<li><p>目录：</p>
+<ul>
+<li>. 表示当前目录</li>
+<li>.. 表示上一级目录（../style.css,当前文件实际上是省略了./）</li>
+<li></li>
+</ul>
+</li>
+<li><p>环境变量（windows系统中的变量）</p>
+<p>一般在环境变量中修改</p>
+<ul>
+<li><p>path：把某个文件的路径加入path后<strong>重启命令行窗口</strong>,就可以在任何位置打开文件了</p>
+</li>
+<li><p>当我们在命令行窗口打开一个文件，或者调用一个程序时，系统会首先在当前目录下寻找文件程序，如果找带了直接打开，如果没找到则会依次到环境变量path的路径中寻找，直到找到为止。如果没找到，则报错</p>
+</li>
+<li><p>类似于作用域链</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">200</span>;<span class="comment">//在没有，找到全局变量a=100</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">300</span>; <span class="comment">//要是没有这一句，继续往外找，找到a=200；</span></span><br><span class="line">        <span class="built_in">console</span>.log(a);<span class="comment">//先找自己，找到了a=300</span></span><br><span class="line">    &#125;</span><br><span class="line">    fn2();</span><br><span class="line">&#125;</span><br><span class="line">fn(); </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>所以可以将一些经常需要访问的程序和文件的路径添加到paht中，这样我们就可以在任意位置来访问了</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2、进程和线程"><a href="#2、进程和线程" class="headerlink" title="2、进程和线程"></a>2、进程和线程</h4><ul>
+<li><p>进程</p>
+<ul>
+<li>进程负责为程序的 运行提供必备的环境</li>
+<li>进程就相当于工厂中的车间（看CPU，占用为0的说明没有在工作）</li>
+</ul>
+</li>
+<li><p>线程</p>
+<ul>
+<li>线程是计算机中的最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程相当于工厂中的工人</li>
+</ul>
+</li>
+<li><p>单线程（一个活一个人干）</p>
+<ul>
+<li>js是<strong>单线程</strong>。在执行js代码时，网页的渲染是停止的，执行完渲染</li>
+</ul>
+</li>
+<li><p>多线程（一个活多个人干）</p>
+<ul>
+<li>假设一个线程加载页面，一个渲染页面，加载到一半js代码里改样式，就会矛盾</li>
+</ul>
+</li>
+</ul>
+<h4 id="3、node-js简介"><a href="#3、node-js简介" class="headerlink" title="3、node.js简介"></a>3、node.js简介</h4><p>node.js是一个能在<strong>服务器端</strong>运行js的js运行环境。（之前都是在浏览器端运行，node.js可以直接在系统中运行，平台不仅限于浏览器了，可以像java等语言一样直接和系统来交互）</p>
+<p><strong>把js的战场从前端拉到服务器</strong></p>
+<ul>
+<li>I/O：对磁盘的读写操作</li>
+</ul>
+<p>Node</p>
+<ul>
+<li>node师弟ES标准的一个实现，也是一个js引擎</li>
+<li>通过node可以使js代码在服务器端执行</li>
+<li>node仅仅对ES标准进行了实现，所以在node中不包含ＤＯＭ和ＢＯＭ</li>
+<li>node中可以使用所有的内联对象<ul>
+<li>String Number Boolean Math Data RegExp Function Object Array</li>
+<li>而DOM和BOM都不能使用，但是可以使用console也可以使用定时器（setTimeout（） setInterval（））</li>
+</ul>
+</li>
+<li>node可以再后台来编写服务器<ul>
+<li>node编写服务器都是单线程的服务器</li>
+<li>进程<ul>
+<li>进程负责为程序的 运行提供必备的环境</li>
+<li>进程就相当于工厂中的车间（看CPU，占用为0的说明没有在工作）</li>
+</ul>
+</li>
+<li>线程<ul>
+<li>线程是计算机中的最小的计算单位，线程负责执行进程中的程序</li>
+<li>线程相当于工厂中的工人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>传统的服务器都是多线程的<ul>
+<li>每进来一个请求，就创建一个线程去处理请求</li>
+</ul>
+</li>
+<li>node的服务器是单线程的<ul>
+<li>node处理请求时是单线程，但是在后台拥有一个I/O线程池</li>
+</ul>
+</li>
+<li>分布式：一个服务器不够，再加一个</li>
+</ul>
+<h4 id="4、包"><a href="#4、包" class="headerlink" title="4、包"></a>4、包</h4><h5 id="1-包的结构"><a href="#1-包的结构" class="headerlink" title="1.包的结构"></a>1.包的结构</h5><p>包就是一个压缩文件，解压以后还原为目录</p>
+<ul>
+<li><p>package.json  描述文件【必须！】</p>
+</li>
+<li><p>bin 可执行二进制文件</p>
+</li>
+<li><p>lib js代码</p>
+</li>
+<li><p>doc 文档</p>
+</li>
+<li><p>test 单元测试</p>
+</li>
+</ul>
+<p>包描述文件勇于表达非代码相关的信息，位于包的根目录下</p>
+<h4 id="5、NPM（Node-Package-Manager）"><a href="#5、NPM（Node-Package-Manager）" class="headerlink" title="5、NPM（Node Package Manager）"></a>5、NPM（Node Package Manager）</h4><p>npm -v 查看版本</p>
+<p>npm version 看所有模块版本</p>
+<p>npm search 包名 查找包（需要联网）</p>
+<p>npm install 包名 在当前目录安装包   或者npm i 包名</p>
+<p>npm install 包名 -g 全局模式安装包（全局安装的包一般都是一些工具，在计算机利用，不是在项目里用）</p>
+<p>npm remove / r 包名 删除包</p>
+<p>npm install 包名 –save  安装包并添加到依赖中【常用！】</p>
+<p>npm install 下载当前项目所依赖的包</p>
+<h4 id="6、cnpm"><a href="#6、cnpm" class="headerlink" title="6、cnpm"></a>6、cnpm</h4><p>镜像服务器，在中国搭建一个服务器，把美国的全部下载到中国，以后直接连接中国的</p>
+<h4 id="7、Buffer"><a href="#7、Buffer" class="headerlink" title="7、Buffer"></a>7、Buffer</h4><p>啊这，看代码注释吧！</p>
+<h4 id="8、fs模块"><a href="#8、fs模块" class="headerlink" title="8、fs模块"></a>8、fs模块</h4><p>同步和异步调用：</p>
+<ul>
+<li>fs模块中所有操作都有两种形式：同步和异步</li>
+<li>同步文件系统会阻塞程序的进行，即除非操作完毕，否则不会向下执行代码</li>
+<li>一部文件系统不会阻塞程序的进行，而是在操作完成时，通过回调函数将结果返回</li>
+</ul>
+<h5 id="同步文件写入："><a href="#同步文件写入：" class="headerlink" title="同步文件写入："></a>同步文件写入：</h5><p>文件系统（File System）<br>    - 文件系统简单来说就是通过node来操作系统中的文件<br>        - 使用文件系统，需要引入fs模块，fs是核心模块，直接引入不需要下载<br>        同步文件的写入<br>        - 手动操作的步骤<br>        1.打开文件<br>        fs.openSync(path,flags[,mode])<br>            - path 要打开文件的路径<br>            - flags 打开文件要做的操作类型<br>                r 只读的<br>                w 可写的<br>            - mode 设置文件的操作权限，一般不传<br>        返回值：<br>        - 该方法会返回一个文件的描述符作为结果，我们可以通过该描述符来对文件进行各种操作<br>          2.向文件中写入内容<br>            fs.writeSync(fd,string[,position[,encoding]])<br>                - fd 文件的描述符，传递我们要写入的文件的描述符<br>                      - string 要写入的内容<br>                      - position 写入起始位置<br>                            - encoding 写入的编码<br>                      3.保存并关闭文件<br>                fs.closeSync(fd)<br>                         - fd 要关闭的文件的描述符</p>
+<h5 id="异步文件写入："><a href="#异步文件写入：" class="headerlink" title="异步文件写入："></a>异步文件写入：</h5><pre><code>fs.open(path,flags[,mode],callback);
+
+- 用来打开一个文件
+    - 异步调用的方法，结果都是通过回调函数的参数返回的
+    - 回调函数两个参数：
+        err 错误对象，如果没有错误则为null
+        fd 文件的描述符
+    fs.write(fd,string[,position[,encoding]],callback)
+    - 用来异步写入一个文件
+    fs.close(fd,callback)
+    - 用来关闭文件
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/16/Node.js/" data-id="ckserzpn50001qwtlddsyf59f" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/08/16/HTTP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/08/16/jQuery/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/16/HTTP/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/Node.js/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/jQuery/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">VUE学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">个人博客搭建过程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
