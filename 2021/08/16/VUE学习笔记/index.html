@@ -14,7 +14,7 @@
 <meta property="og:description" content="一、vue基础1、第一个vue程序12345678910111213141516171819&lt;body&gt;    &lt;div id&#x3D;&quot;app&quot;&gt;        &lt;!-- 插值表达式 把数据和页面的结构关联起来 --&gt;        &amp;#123;&amp;#123;message&amp;#125;&amp;#125;    &lt;&#x2F;div&gt;        &amp;lt">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-16T12:50:40.000Z">
-<meta property="article:modified_time" content="2021-08-16T15:06:26.000Z">
+<meta property="article:modified_time" content="2021-08-17T14:44:36.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -105,30 +105,46 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;school.name&#125;&#125; &#123;&#123;school.mobile&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;campus[0]&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;campus[1]&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">        </span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">el</span>:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="javascript">                <span class="attr">message</span>:<span class="string">&quot;你好!&quot;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="attr">school</span>:&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="attr">name</span>:<span class="string">&quot;zym&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="attr">mobile</span>:<span class="string">&quot;15600001234&quot;</span></span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                <span class="attr">campus</span>:[<span class="string">&quot;北京&quot;</span>,<span class="string">&quot;上海&quot;</span>]</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;)</span></span><br><span class="line"><span class="javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="二、本地应用"><a href="#二、本地应用" class="headerlink" title="二、本地应用"></a>二、本地应用</h4><ol>
-<li><p>v-text</p>
-<p>作用：设置标签内容</p>
+<li><h5 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h5><p>作用：设置标签内容</p>
 <p>默认写法会替代全部内容，使用差值表达式（双大括号）替换指定内容</p>
 <p>内部支持写表达式，双引号里面要写成单引号</p>
 </li>
-<li><p>v-html</p>
-<p>v-html指令的作用是设置元素的innerTML</p>
+<li><h5 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h5><p>v-html指令的作用是设置元素的innerTML</p>
 <p>内容中有html结构会被解析为标签</p>
 <p>v-text指令无论内容是什么，只会解析文本</p>
 <p>解析文本使用v-text，需要解析html结构使用v-html</p>
 </li>
-<li><p>v-on</p>
-<p>作用：为元素绑定事件</p>
+<li><h5 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h5><p>作用：为元素绑定事件</p>
 <p>事件名不需要写on</p>
 <p>指令可以简写为@</p>
 <p>按核定的方法定义在methods属性中</p>
 <p>方法内部通过this关键字可以访问在data中数据</p>
 </li>
+<li><h5 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h5><p>作用：根据真假状态切换元素的现实状态，原理是修改元素的display实现显示隐藏</p>
+<p>指令后面的内容都会解析为布尔值  如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-show</span>=<span class="string">&quot;isShow&quot;</span> <span class="attr">src</span>=<span class="string">&quot;./images/cat.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-show</span>=<span class="string">&quot;age&gt;=18&quot;</span> <span class="attr">src</span>=<span class="string">&quot;./images/Princess.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><h5 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h5><p>v-if的实质是操作DOM树，隐藏的时候直接标签都没了，该操作对资源消耗较大，所以频繁操作的时候用vshow比较好，反之使用v-if</p>
+</li>
+<li><h5 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h5><p>作用：为元素绑定属性  需要动态增删class建议使用对象的方式，三目运算符写法比较啰嗦</p>
+<p>完整写法是：<strong>v-bind：属性名</strong></p>
+<p>简介写法是 ：<strong>属性名</strong></p>
+</li>
+<li><h5 id="图片轮播案例"><a href="#图片轮播案例" class="headerlink" title="图片轮播案例"></a>图片轮播案例</h5><p><strong>思路</strong>：首先在vue中以数组形式给出初始的data：每个图片的地址；以及index（初始值为0）</p>
+<p>定义两个函数prev和next，分别是index的减少和增加，为两个箭头图片绑定鼠标点击事件，分别对应这两个函数（@click）</p>
+<p>为了实现点到头的时候最左和最右的箭头消失，添加v-show属性，左边的当index不为0时都可以点，右边的当index小于imgArr.length时都可以点。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;mask&quot;</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">&lt;!-- 左箭头 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:void(0)&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;index!=0&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;prev&quot;</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./images/left.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 图片 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;imgArr[index]&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 右箭头 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;javascript:void(0)&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;index&lt;imgArr.length-1&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;next&quot;</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./images/right.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">el</span>:<span class="string">&quot;#mask&quot;</span>,</span></span><br><span class="line"><span class="javascript">            <span class="attr">data</span>:&#123;</span></span><br><span class="line"><span class="javascript">                <span class="attr">imgArr</span>:[</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;./images/cat.jpg&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;./images/fl.png&quot;</span>,</span></span><br><span class="line"><span class="javascript">                    <span class="string">&quot;./images/Princess.jpg&quot;</span></span></span><br><span class="line"><span class="javascript">                ],</span></span><br><span class="line"><span class="javascript">                <span class="attr">index</span>:<span class="number">0</span></span></span><br><span class="line"><span class="javascript">            &#125;,</span></span><br><span class="line"><span class="javascript">            <span class="attr">methods</span>:&#123;</span></span><br><span class="line"><span class="javascript">                <span class="attr">prev</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">this</span>.index--;</span></span><br><span class="line"><span class="javascript">                &#125;,</span></span><br><span class="line"><span class="javascript">                <span class="attr">next</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">this</span>.index++;</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;)</span></span><br><span class="line"><span class="javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><h5 id="v-for指令"><a href="#v-for指令" class="headerlink" title="v-for指令"></a>v-for指令</h5><p>作用：根据数据生成列表结构，经常和数组结合使用</p>
+<p>语法：<code>( item , index ) in</code> 其中item可以修改，in是固定用法</p>
+</li>
+<li><h5 id="v-mode指令"><a href="#v-mode指令" class="headerlink" title="v-mode指令"></a>v-mode指令</h5><p>获取和设置表单和元素的值（双向数据绑定 ）</p>
+</li>
+<li></li>
 </ol>
-
+<h5 id><a href="#" class="headerlink" title></a></h5>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckserzpnf0002qwtldggz6po3" data-title="VUE学习笔记" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="cksg6rsr60002t0tl2pf81tfo" data-title="VUE学习笔记" class="article-share-link">Share</a>
       
       
       
@@ -138,19 +154,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/08/16/jQuery/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/08/14/Node.js/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">个人博客搭建过程</div>
+      <div class="article-nav-title">Node.js学习笔记</div>
     </a>
   
 </nav>
@@ -188,23 +195,23 @@
       <ul>
         
           <li>
-            <a href="/2021/08/16/HTTP/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/16/Node.js/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/16/jQuery/">(no title)</a>
-          </li>
-        
-          <li>
             <a href="/2021/08/16/VUE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">VUE学习笔记</a>
           </li>
         
           <li>
+            <a href="/2021/08/14/Node.js/">Node.js学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/13/jQuery/">jQuery学习笔记</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/12/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">个人博客搭建过程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/12/photo/">photo</a>
           </li>
         
       </ul>
