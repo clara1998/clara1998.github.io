@@ -14,8 +14,9 @@
 <meta property="og:description" content="HTTP（Hyper Text Transfer Protocol，超文本传输协议）1、万维网（www） 一个大规模的、练计时的信息储藏所&#x2F;资料空间，是无数个网络站点和网页的集合 统一资源定位符URL   ——–&gt; 资源（文字、视频、音频） URL一般形式： &lt;协议&gt;：&#x2F;&#x2F;&lt;主机&gt;：&lt;端口&gt;&#x2F;&lt;路径&gt;  协议：http、ftp 主机：域名、IP">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/08/11/HTTP/image-20210809160257028.png">
+<meta property="og:image" content="https://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif">
 <meta property="article:published_time" content="2021-08-11T06:37:24.000Z">
-<meta property="article:modified_time" content="2021-08-17T14:49:10.000Z">
+<meta property="article:modified_time" content="2021-08-24T09:22:20.000Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/08/11/HTTP/image-20210809160257028.png">
@@ -240,11 +241,49 @@
 <p>体        </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">            哈哈哈</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="7、HTTPS"><a href="#7、HTTPS" class="headerlink" title="7、HTTPS"></a>7、HTTPS</h3><p>HTTP协议传输的数据都是<strong>未加密的，也就是明文的</strong>，因此使用HTTP协议传输隐私信息非常不安全。</p>
+<p><strong>HTTPS</strong>（Hypertext Transfer Protocol Secure：超文本传输安全协议）是一种透过计算机网络进行安全通信的传输协议。HTTPS 经由 HTTP 进行通信，但利用 <strong>SSL/TLS</strong> 来加密数据包。HTTPS 开发的主要目的，是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。</p>
+<p>HTTPS 默认工作在 TCP 协议443端口，它的工作流程一般如以下方式：</p>
+<ul>
+<li>1、TCP 三次同步握手</li>
+<li>2、客户端验证服务器数字证书</li>
+<li>3、DH 算法协商对称加密算法的密钥、hash 算法的密钥</li>
+<li>4、SSL 安全加密隧道协商完成</li>
+<li>5、网页以加密的方式传输，用协商的对称加密算法和密钥加密，保证数据机密性；用协商的hash算法进行数据完整性保护，保证数据不被篡改。</li>
+</ul>
+<p>SSL：安全套接字协议</p>
+<p>TLS：传输层安全</p>
+<ul>
+<li>HTTPS和HTTP的区别主要如下：</li>
+</ul>
+<p>　　1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。</p>
+<p>　　2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</p>
+<p>　　3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</p>
+<p>　　4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+<ul>
+<li>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤，如图所示。</li>
+</ul>
+<p>　　（1）客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</p>
+<p>　　（2）Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</p>
+<p>　　（3）客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</p>
+<p>　　（4）客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</p>
+<p>　　（5）Web服务器利用自己的私钥解密出会话密钥。</p>
+<p>　　（6）Web服务器利用会话密钥加密与客户端之间的通信。</p>
+<p><img src="https://pic002.cnblogs.com/images/2012/339704/2012071410212142.gif" alt="img"></p>
+<h4 id="HTTPS的优点："><a href="#HTTPS的优点：" class="headerlink" title="HTTPS的优点："></a>HTTPS的优点：</h4><p>（1）使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器；</p>
+<p>（2）HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。</p>
+<p>（3）HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。</p>
+<p>（4）谷歌曾在2014年8月份调整搜索引擎算法，并称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。</p>
+<h4 id="HTTPS的缺点："><a href="#HTTPS的缺点：" class="headerlink" title="HTTPS的缺点："></a>HTTPS的缺点：</h4><p>（1）HTTPS协议<strong>握手阶段比较费时</strong>，会使页面的加载时间延长近50%，增加10%到20%的耗电；</p>
+<p>（2）HTTPS连接缓存不如HTTP高效，会<strong>增加数据开销和功耗</strong>，甚至已有的安全措施也会因此而受到影响；</p>
+<p>（3）SSL证书需要<strong>钱</strong>，功能越强大的证书费用越高，个人网站、小网站没有必要一般不会用。</p>
+<p>（4）SSL证书通常需要绑定IP，<strong>不能在同一IP上绑定多个域名</strong>，IPv4资源不可能支撑这个消耗。</p>
+<p>（5）HTTPS协议的加密范围也比较有限，在黑客攻击、拒绝服务攻击、服务器劫持等方面几乎起不到什么作用。最关键的，SSL证书的信用链体系并不安全，特别是在某些国家可以控制CA根证书的情况下，中间人攻击一样可行。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/11/HTTP/" data-id="cksizqqtb00002ctl0kxz94hx" data-title="HTTP（Hyper Text Transfer Protocol，超文本传输协议）" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/08/11/HTTP/" data-id="ckspv1lhj0000mctl6exjamjz" data-title="HTTP（Hyper Text Transfer Protocol，超文本传输协议）" class="article-share-link">Share</a>
       
       
       
